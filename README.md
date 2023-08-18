@@ -1,2 +1,2 @@
 # atom-test-proyect
-it is a test proyect
+this is a test proyect
