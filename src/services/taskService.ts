@@ -5,7 +5,6 @@ import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, updateDoc } from '
 const tasksCollectionRef  = collection(db,"tasks");
 export const addTask = async (newTask: any) => {
     try {
-        await TaskValidator.validate(newTask);
         const docRef = await addDoc(tasksCollectionRef,newTask);
         return docRef.id;
     } catch (error) {
@@ -35,7 +34,6 @@ export const deleteTaskById = async (taskId: string) => {
 
 export const updateTaskById = async (taskId: string, updatedTaskData: any) => {
     try {
-        await TaskValidator.validate(updatedTaskData);
         const taskDocRef = doc(db, 'tasks', taskId);
         const taskSnapshot = await getDoc(taskDocRef);
         if (!taskSnapshot.exists()) {
