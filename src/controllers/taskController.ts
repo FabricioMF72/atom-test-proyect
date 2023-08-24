@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { addTask, getAllTasks, deleteTaskById, updateTaskById } from '../services/taskService';
-import { ResponseStatus, StatusCodes } from '../models/task';
+import { ResponseStatus, StatusCodes } from '../models/common';
 
 export const addTaskController = async (req: Request, res: Response) => {
     const newTask = req.body;
