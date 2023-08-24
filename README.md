@@ -22,7 +22,7 @@ Before you start, ensure you have the following installed on your system:
 ### Installation
 
 1. Clone this repository:
-   git clone https://github.com/your-username/atom-test.git
+   git clone https://github.com/FabricioMF72/atom-test-proyect.git
 
 2. Install the project dependencies:
    npm install
