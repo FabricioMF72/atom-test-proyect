@@ -49,10 +49,11 @@ export const deleteTaskController = async (req: Request, res: Response) => {
             data: null,
         });
     } catch (error: any) {
-        if(error==="Task not found"){
+        console.log("🚀 ~ file: taskController.ts:52 ~ deleteTaskController ~ error:", error)
+        if(error.message==="Task not found"){
             return res.status(StatusCodes.NotFound).send({
                 status: ResponseStatus.Error,
-                message: "not found",
+                message: "Not found",
                 data: null,
             });
         }
@@ -77,10 +78,10 @@ export const updateTaskController = async (req: Request, res: Response) => {
             }
         });
     } catch (error: any) {
-        if(error==="Task not found"){
+        if(error.message==="Task not found"){
             return res.status(StatusCodes.NotFound).send({
                 status: ResponseStatus.Error,
-                message: "not found",
+                message: "Not found",
                 data: null,
             });
         }
