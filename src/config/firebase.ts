@@ -1,14 +1,16 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
-
+import { config } from 'dotenv';
+config();
+console.log(process.env.API_KEY)
 const firebaseConfig = {
-  apiKey: "AIzaSyB6uToYymGD88gFt7kMwAKS6EqDcxetaBs",
-  authDomain: "atom-db.firebaseapp.com",
-  projectId: "atom-db",
-  storageBucket: "atom-db.appspot.com",
-  messagingSenderId: "204214218236",
-  appId: "1:204214218236:web:6c2fc3d13b96d46ed41679",
-  measurementId: "G-4JV38HRTRQ"
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig)
